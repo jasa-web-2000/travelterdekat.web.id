@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-inter: "Inter", sans-serif;
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+@theme inline {
+    --color-primary: var(--primary);
+
+    --color-background-primary: var(--background-primary);
+    --color-background-secondary: var(--background-secondary);
+
+    --color-text-title: var(--text-title);
+    --color-text-description: var(--text-description);
+
+    --color-link: var(--text-link);
+}
+
+:root {
+    --primary: oklch(54.1% 0.281 293.009);
+
+    --background-primary: var(--color-gray-50);
+    --background-secondary: var(--color-gray-200);
+
+    --text-title: var(--color-gray-900);
+    --text-description: var(--color-gray-700);
+
+    --text-link: var(--color-blue-500);
+}
+
+.dark {
+    --background-primary: var(--color-gray-950);
+    --background-secondary: var(--color-gray-900);
+
+    --text-title: var(--color-gray-100);
+    --text-description: var(--color-gray-400);
+
+    --text-link: var(--color-blue-500);
+}
+
+@layer base {
+    h1 {
+        @apply capitalize text-3xl font-bold tracking-wide;
+    }
+    h2 {
+        @apply capitalize text-2xl font-semibold;
+    }
+    h3 {
+        @apply capitalize text-lg font-semibold;
+    }
+    button,
+    a {
+        @apply cursor-pointer;
+    }
+
+    a {
+        @apply underline text-link;
+    }
+}
+
+@utility my-container {
+    @apply w-full max-w-7xl mx-auto px-5;
+}
+
+@utility bg-container {
+    @apply absolute bg-[url(/images/background-home.webp)] bg-cover bg-center w-full h-full bg-no-repeat before:absolute before:inset-0 before:bg-gradient-to-br before:from-indigo-950/85 before:to-indigo-950/95 before:content-[''];
+}
+
+@utility my-space {
+    @apply min-h-24;
+}
