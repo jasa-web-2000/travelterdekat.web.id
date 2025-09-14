@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 @import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -12,70 +14,118 @@
     --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
+
+    --animation-bounce: var(--animate-bounce);
+
+    @keyframes bounce {
+        0%,
+        100% {
+            transform: translateY(-10%);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+            transform: none;
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
 }
 
 @theme inline {
-    --color-primary: var(--primary);
+    --color-primary: oklch(54.1% 0.281 293.009);
 
-    --color-background-primary: var(--background-primary);
-    --color-background-secondary: var(--background-secondary);
+    --color-background-primary: var(--color-gray-50);
+    --color-background-secondary: var(--color-gray-200);
 
-    --color-text-title: var(--text-title);
-    --color-text-description: var(--text-description);
+    --color-text-title-black: var(--color-gray-800);
+    --color-text-description-black: var(--color-gray-700);
 
-    --color-link: var(--text-link);
+    --color-text-title-white: var(--color-gray-200);
+    --color-text-description-white: var(--color-gray-300);
+
+    --color-link: var(--color-blue-500);
+    --color-danger: var(--color-red-400);
+    --color-focus: var(--color-slate-400);
 }
 
 :root {
     --primary: oklch(54.1% 0.281 293.009);
-
-    --background-primary: var(--color-gray-50);
-    --background-secondary: var(--color-gray-200);
-
-    --text-title: var(--color-gray-900);
-    --text-description: var(--color-gray-700);
-
-    --text-link: var(--color-blue-500);
-}
-
-.dark {
-    --background-primary: var(--color-gray-950);
-    --background-secondary: var(--color-gray-900);
-
-    --text-title: var(--color-gray-100);
-    --text-description: var(--color-gray-400);
-
-    --text-link: var(--color-blue-500);
+    --secondary: oklch(0.64 0.22 299.42);
 }
 
 @layer base {
     h1 {
-        @apply capitalize text-3xl font-bold tracking-wide;
+        @apply capitalize text-4xl sm:text-5xl lg:text-6xl font-bold tracking-wide text-text-title-white;
     }
     h2 {
-        @apply capitalize text-2xl font-semibold;
+        @apply text-text-title-black capitalize text-xl md:text-2xl font-semibold;
     }
     h3 {
-        @apply capitalize text-lg font-semibold;
+        @apply text-text-title-black capitalize text-lg md:text-xl font-semibold;
     }
     button,
-    a {
+    a,
+    label {
         @apply cursor-pointer;
     }
 
+    input,
+    textarea,
+    select {
+        @apply focus:outline-2 focus:!outline-primary w-full !border-slate-300;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+        @apply my-pseudo text-sm text-text-description-black py-1.5 rounded-md px-3 border border-slate-400;
+    }
+
+    label {
+        @apply font-medium !inline-flex text-[15px];
+    }
+
     a {
+        @apply hover:text-primary hover:text-shadow-2xs;
+    }
+
+    main a {
         @apply underline text-link;
     }
+}
+
+@utility my-pseudo {
+    @apply disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus:outline-2 focus:outline-focus shrink-0 [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:border-background-primary focus-visible:ring-background-primary/50 focus-visible:ring-[3px] aria-invalid:ring-danger aria-invalid:border-danger border-[1.5px];
 }
 
 @utility my-container {
     @apply w-full max-w-7xl mx-auto px-5;
 }
 
-@utility bg-container {
-    @apply absolute bg-[url(/images/background-home.webp)] bg-cover bg-center w-full h-full bg-no-repeat before:absolute before:inset-0 before:bg-gradient-to-br before:from-indigo-950/85 before:to-indigo-950/95 before:content-[''];
+@utility hero-gradient {
+    @apply absolute bg-cover bg-center w-full h-full bg-no-repeat before:absolute before:inset-0 before:content-[''] before:bg-gradient-to-br before:from-primary/35 before:via-primary/95 before:to-primary/65 after:absolute after:inset-0 after:content-[''] after:bg-gradient-to-b after:from-slate-950/50 after:to-slate-950/60;
+}
+
+@utility simple-gradient {
+    @apply bg-gradient-to-br from-primary to-primary/65;
 }
 
 @utility my-space {
     @apply min-h-24;
+}
+
+@utility py-mine {
+    @apply py-16 md:py-20 lg:py-28;
+}
+
+@utility btn {
+    @apply my-pseudo no-underline inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all  text-background-primary shadow-md py-1.5 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5;
+}
+
+@utility btn-primary {
+    @apply btn simple-gradient border-primary hover:bg-primary/90;
+}
+
+@utility btn-secondary {
+    @apply btn border-white bg-transparent/50 text-background-primary hover:simple-gradient;
 }

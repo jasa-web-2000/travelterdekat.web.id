@@ -1,5 +1,15 @@
 <IfModule mod_rewrite.c>
 
+    # # Cache HTML files for 3600 seconds (1 hour)
+    # <FilesMatch "\.(html)$">
+    #     Header set Cache-Control "max-age=3600, public"
+    # </FilesMatch>
+
+    # # Cache CSS, JS, dan gambar untuk 3600 detik (1 hour)
+    # <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|woff2|woff|ttf)$">
+    #     Header set Cache-Control "max-age=3600, public"
+    # </FilesMatch>
+
     # Redirect dari www ke non-www
     RewriteCond %{HTTP_HOST} ^www\.travelterdekat\.web\.id [NC]
     RewriteRule ^(.*)$ https://travelterdekat.web.id/$1 [L,R=301]
@@ -7,6 +17,8 @@
     # Redirect dari HTTP ke HTTPS
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://travelterdekat.web.id/$1 [L,R=301]
+
+
 
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes

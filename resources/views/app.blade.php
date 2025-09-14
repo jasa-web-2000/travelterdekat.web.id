@@ -7,41 +7,31 @@
         $resultTitle = $title ?? web()->title . ' | ' . web()->title;
         $resultDescription = $description ?? web()->tagline . ' | ' . web()->title;
         $resultThumbnail = (object) [
-            'url' => $thumbnail['url'] ?? asset(web()->defaultLogo),
+            'url' => $thumbnail['url'] ?? web()->defaultLogo,
             'width' => $thumbnail['width'] ?? 672,
             'height' => $thumbnail['height'] ?? 672,
             'alt' => $thumbnail['alt'] ?? 'Logo ' . web()->title,
         ];
     @endphp
 
-    <link rel="preload" href="{{ asset('/fonts/inter.ttf') }}" as="font" type="font/ttf" crossorigin="anonymous">
-
-
     <!-- Styles / Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="preload" fetchpriority="high" as="image" href="{{ asset('images/general/background-hero.webp') }}"
+        type="image/webp">
+    <link rel="preload" fetchpriority="high" href="{{ asset('fonts/Roboto-Regular.ttf') }}" as="font" type="font/ttf"
+        crossorigin="anonymous">
+
+
     <style>
         @font-face {
-            font-family: "Inter";
-            font-style: normal;
+            font-family: 'Poppins';
+            src: url('{{ asset('fonts/Roboto-Regular.ttf') }}') format('truetype');
             font-weight: 400;
+            font-style: normal;
             font-display: swap;
-            src: url("/fonts/inter.ttf") format("truetype");
         }
     </style>
 
-
-    <script>
-        document.documentElement.classList.toggle(
-            "dark",
-            localStorage.theme === "dark" ||
-            (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
-        );
-        localStorage.theme = "light";
-        // Whenever the user explicitly chooses dark mode
-        localStorage.theme = "dark";
-        // Whenever the user explicitly chooses to respect the OS preference
-        localStorage.removeItem("theme");
-    </script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,8 +50,8 @@
     <title>{{ $resultTitle }}</title>
     <meta name="description" content="{{ $resultDescription }}">
     <meta name="application-name" content="{{ web()->title }}">
-    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ web()->defaultLogo }}">
+    <link rel="icon" href="{{ web()->defaultLogo }}">
 
 
     <!-- Google Bot -->
@@ -95,11 +85,15 @@
 </head>
 
 <body
-    class="overflow-y-visible font-inter bg-background-primary text-text-description antialiased w-full h-dvh !overflow-visible">
+    class="!font-inter bg-background-secondary text-text-description-black tracking-[0.015em] antialiased w-full h-dvh !overflow-visible">
 
-    <x-header />
+    @include('components.header')
 
-    @yield('content')
+    <main class="">
+        @yield('content')
+    </main>
+
+    @include('components.footer')
 
 </body>
 
