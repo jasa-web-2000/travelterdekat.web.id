@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class ProvinceController extends Controller
+class RegencyController extends Controller
 {
     public $data;
 
     public function __construct()
     {
-        $jsonFilePath = storage_path('/app/public/data/provinces.json');
+        $jsonFilePath = storage_path('/app/public/data/regencies.json');
 
         $json = File::get($jsonFilePath);
 

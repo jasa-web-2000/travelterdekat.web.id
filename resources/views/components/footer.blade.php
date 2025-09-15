@@ -44,8 +44,8 @@
                 <h3 class="light">Laman</h3>
                 <div class="footerList">
                     @foreach (menu() as $item)
-                        <a class="{{ $item[1] == $page ? '!text-primary/95' : '' }} " href="{{ $item[0] }}"
-                            title="{{ $item[1] }}">
+                        <a class="{{ $item[0] == request()->url() ? '!text-primary/95' : '' }} "
+                            href="{{ $item[0] }}" title="{{ $item[1] }}">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-4">
                                 <path stroke-linecap="round" stroke-linejoin="round"

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\RegencyController;
 
 if (! function_exists('mail')) {
     function mail(?string $mail = null, bool $link = false)
@@ -80,6 +82,29 @@ if (! function_exists('developer')) {
 // 
 
 
+
+if (! function_exists('province')) {
+    function province()
+    {
+        $province = (new ProvinceController())->data;
+        return $province;
+    }
+}
+
+if (! function_exists('regency')) {
+    function regency()
+    {
+        $regency = (new RegencyController())->data;
+        return $regency;
+    }
+}
+if (! function_exists('district')) {
+    function district()
+    {
+        $regency = (new RegencyController())->data;
+        return $regency;
+    }
+}
 
 if (! function_exists('menu')) {
     function menu()

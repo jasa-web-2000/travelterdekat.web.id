@@ -4,8 +4,8 @@
 <head>
 
     @php
-        $resultTitle = $title ?? web()->title . ' | ' . web()->title;
-        $resultDescription = $description ?? web()->tagline . ' | ' . web()->title;
+        $resultTitle = ($title ?? web()->title) . ' | ' . web()->title;
+        $resultDescription = ($description ?? web()->tagline) . ' | ' . web()->title;
         $resultThumbnail = (object) [
             'url' => $thumbnail['url'] ?? web()->defaultLogo,
             'width' => $thumbnail['width'] ?? 672,

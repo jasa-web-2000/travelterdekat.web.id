@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\LandingPage;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactFormRequest;
 
 class ContactFormController extends Controller
