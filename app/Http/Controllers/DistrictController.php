@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class DistrictControllerController extends Controller
+class DistrictController extends Controller
 {
     public $data;
 
     public function __construct()
     {
         $jsonFilePath = storage_path('/app/public/data/districts.json');
-
         $json = File::get($jsonFilePath);
 
-        $this->data = collect(json_decode($json))->values();
+        $resultData = json_decode($json);
+        $this->data = collect($resultData);
     }
 
 

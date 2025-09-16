@@ -12,10 +12,10 @@ class ProvinceController extends Controller
     public function __construct()
     {
         $jsonFilePath = storage_path('/app/public/data/provinces.json');
-
         $json = File::get($jsonFilePath);
 
-        $this->data = collect(json_decode($json))->values();
+        $resultData = json_decode($json);
+        $this->data = collect($resultData);
     }
 
 

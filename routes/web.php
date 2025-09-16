@@ -1,21 +1,22 @@
 <?php
 
-use App\Http\Controllers\LandingPage\ArchiveTravel;
+use App\Http\Controllers\LandingPage\ArchiveTravelController;
 use App\Http\Controllers\LandingPage\ContactController;
 use App\Http\Controllers\LandingPage\ContactFormController;
 use App\Http\Controllers\LandingPage\GalleryController;
 use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\LandingPage\SingleTravelController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 
 Route::prefix('travel')->group(function () {
 
-    Route::get('/', ArchiveTravel::class)->name('travel.archive');
+    Route::get('/', ArchiveTravelController::class)->name('travel.archive');
 
-    Route::prefix('/{asal}/{tujuan}/{asalId}/{tujuanId}')->group(function () {
-        Route::get('/', HomeController::class)->name('travel.show');
-        Route::get('/thumbnail.jpg', HomeController::class)->name('travel.show.thumbnail');
+    Route::prefix('/{originName}/{destinationName}/{originId}/{destinationId}')->group(function () {
+        Route::get('/', SingleTravelController::class)->name('travel.show');
+        Route::get('/thumbnail.jpg', SingleTravelController::class)->name('travel.show.thumbnail');
     });
 });
 

@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\RegencyController;
+use App\Http\Controllers\DistrictController;
 
 if (! function_exists('mail')) {
     function mail(?string $mail = null, bool $link = false)
@@ -101,8 +103,27 @@ if (! function_exists('regency')) {
 if (! function_exists('district')) {
     function district()
     {
-        $regency = (new RegencyController())->data;
+        $regency = (new DistrictController())->data;
         return $regency;
+    }
+}
+if (! function_exists('location')) {
+    function location($id, $name = null)
+    {
+        $data = null;
+        if ($id <= 51) {
+            $data = province()->where('id', $id)->first();
+        } elseif ($id <= 5171) {
+            $data = regency()->where('id', $id)->first();
+        } else {
+            $data = district()->where('id', $id)->first();
+        }
+
+        if ($data && $name && Str::slug($data->name) != $name) {
+            return null;
+        }
+
+        return $data;
     }
 }
 

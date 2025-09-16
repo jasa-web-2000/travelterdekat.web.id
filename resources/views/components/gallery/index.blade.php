@@ -38,7 +38,8 @@
                 class="grid gap-5 md:gap-6 lg:gap-7 md:last:grid-cols-4 md:last:col-span-full lg:last:grid-cols-1 lg:last:col-span-1">
                 @foreach ($group as $item)
                     <a href="{{ asset($item[0]) }}" title="Galeri {{ $index }}">
-                        <img src="{{ asset($item[0]) }}" class="{{ $item[1] }}" title="Galeri {{ $index }}"
+                        <img src="{{ asset($item[0]) }}" loading="lazy" class="{{ $item[1] }}"
+                            title="Galeri {{ $index }}"
                             alt="Galeri {{ config('app.name') }} ke-{{ $index++ }}" width="400" height="400">
                     </a>
                 @endforeach
