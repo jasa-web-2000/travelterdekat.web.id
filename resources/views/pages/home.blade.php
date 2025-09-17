@@ -9,11 +9,19 @@
 
     <div class="my-space"></div>
 
-    @include('components.home.featured')
+    <x-home.featured />
+
+    <x-home.partner />
 
     <div class="my-space"></div>
 
     <x-gallery.index />
+
+    <div class="my-space "></div>
+
+    <x-home.cta />
+
+    <x-home.faq />
 
     <div class="my-space"></div>
 

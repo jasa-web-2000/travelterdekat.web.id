@@ -1,6 +1,23 @@
+@php
+    $featured = [
+        [
+            'icon' => 'M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
+            'detail' => 'Jadwal 24 jam',
+        ],
+        [
+            'icon' => 'M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
+            'detail' => 'Door to door',
+        ],
+        [
+            'icon' => 'M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
+            'detail' => 'Free bagasi 15 kg',
+        ],
+    ];
+
+@endphp
 <div class="bg-white p-5 rounded-lg shadow-lg border-b-8 border-b-primary">
     <div class="relative">
-        <img class="w-full rounded-md aspect-video border brightness-100 hover:brightness-90" loading="lazy"
+        <img class="w-full rounded-md aspect-video bg-primary/25 brightness-100 hover:brightness-90" loading="lazy"
             src="{{ $thumbnail }}" alt="{{ $title }}" title="{{ $title }}" width="800" height="450" />
         <span
             class="absolute top-0 left-0 bg-primary text-slate-300 font-semibold p-1 px-2 text-xs rounded-br-lg rounded-tl-lg">
@@ -13,12 +30,16 @@
     <div class="!text-sm">
 
         <div class="">
-            <x-travel.archive.featured-list icon="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                detail="Jadwal 24 jam" />
-            <x-travel.archive.featured-list icon="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                detail="Door to door" />
-            <x-travel.archive.featured-list icon="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                detail="Free bagasi 15 kg" />
+            @foreach ($featured as $item)
+                <div class="flex space-x-2 items-center mb-1.5 line-clamp-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-3.5 text-primary">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="{{ $item['icon'] }}" />
+                    </svg>
+
+                    <p class="text-sm">{{ $item['detail'] }}</p>
+                </div>
+            @endforeach
         </div>
 
         <p class="mt-4 mb-2 line-clamp-2">

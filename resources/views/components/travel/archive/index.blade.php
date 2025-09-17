@@ -14,7 +14,7 @@
 
 <div class="my-container text-center">
     <x-sub-heading subTitle='Rute Travel Unggulan'
-        description='Kami memiliki beberapa rute travel unggulan yang mungkin anda suka' />
+        description='Kami memiliki beberapa rute travel unggulan yang mungkin anda suka.' />
 
     <div
         class="grid grid-cols-1 min-[490px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-5 sm:gap-x-6 md:gap-x-7 lg:gap-x-8 gap-y-7 sm:gap-y-8 md:gap-y-9 lg:gap-y-10 text-left">
