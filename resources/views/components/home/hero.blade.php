@@ -23,7 +23,7 @@
             class="btn-secondary !bg-background-secondary text-text-description-black hover:text-text-description-white">
             Reservasi
         </a>
-        <a href="{{ route('travel.archive') }}#cari-rute" rel="nofollow noindex" title="whatsapp" class="btn-secondary">
+        <a href="#cari-rute" rel="nofollow noindex" title="whatsapp" class="btn-secondary">
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="mr-3">

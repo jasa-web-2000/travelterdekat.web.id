@@ -135,6 +135,7 @@ if (! function_exists('menu')) {
             [route('travel.archive'), "Travel"],
             [route('gallery'), "Galeri"],
             [route('contact'), "Kontak"],
+            [route('sitemap'), "Sitemap"],
         ];
 
         return (object) $data;

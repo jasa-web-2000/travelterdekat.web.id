@@ -15,7 +15,7 @@
     ];
 
 @endphp
-<div class="bg-white p-5 rounded-lg shadow-lg border-b-8 border-b-primary">
+<div class="bg-white p-5 rounded-lg shadow-lg border-b-8 border-b-primary !text-left">
     <div class="relative">
         <img class="w-full rounded-md aspect-video bg-primary/25 brightness-100 hover:brightness-90" loading="lazy"
             src="{{ $thumbnail }}" alt="{{ $title }}" title="{{ $title }}" width="800" height="450" />
@@ -27,7 +27,7 @@
     <h3 class="my-4 text-[17px] line-clamp-2" title="{{ $title }}">
         {{ $title }}
     </h3>
-    <div class="!text-sm">
+    <div class="!text-sm ">
 
         <div class="">
             @foreach ($featured as $item)

@@ -15,7 +15,26 @@
         [
             'question' => 'Tersedia Mobil Travel Apa Saja?',
             'answer' =>
-                'Kami memiliki banyak mobil untuk layanan travel, semua mobil telah dilengkapi ac. Berikut daftar mobil yang kami miliki: Avanza, Xenia, Calya, Innova, Hiace, Elf Long, Elf Short, Luxio, Gran Max, Pregio, Travello, Mobilio, Ertiga, APV, Fortuner, Pajero Sport.',
+                'Kami memiliki banyak mobil untuk layanan travel, semua mobil telah dilengkapi ac. Berikut daftar mobil yang kami miliki: Avanza, Xenia, Calya, Innova, Hiace, Elf Long, Elf Short, Luxio, Gran Max, Pregio, Travello, Mobilio, Ertiga, APV, Fortuner, Pajero Sport, dan masih banyak lagi.',
+        ],
+        [
+            'question' => 'Garasi Travel Ada Di Mana?',
+            'answer' =>
+                'Untuk garasi utama kami ada di ' .
+                address()->streetAddress .
+                '. Namun karena ' .
+                web()->title .
+                ' adalah agen travel terpercaya, kami pastinya memiliki partner travel yang tersebar diberbagai daerah.',
+        ],
+        [
+            'question' => 'Bagaimana Cara Pesan Tiket?',
+            'answer' =>
+                'Cara pesen tiket sangatlah mudah, bisa pesan kapan saja dan di mana saja. Pastinya anda akan mengisi formulir langsung baik itu offline maupun offline via whatsapp. Isi data sesuai penumpang dan berikan detail lokasi antar jemput.',
+        ],
+        [
+            'question' => 'Bisa Melakukan & Refund?',
+            'answer' =>
+                'Untuk reschedule atau perubahan jadwal disarankan dilakukan 1 hari sebelum keberangkatan. Agar kami dapat menyesuaikan jadwal sopir. Sedangakan refund bisa diklaim 100%. Tapi biasanya kami tidak meminta dp ketika pemesanan.',
         ],
     ];
 @endphp

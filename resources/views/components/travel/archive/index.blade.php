@@ -1,6 +1,7 @@
 @php
     $travel = [
         [31, 3273], // DKI Jakarta - Kota Bandung
+        [3510, 3578], // KABUPATEN BANYUWANGI - KOTA SURABAYA
         [3171, 51], // KOTA JAKARTA SELATAN - Bali
         [3578, 31], // KOTA SURABAYA - DKI Jakarta
         [3302710, 3374], // PURWOKERTO SELATAN - KOTA SEMARANG
@@ -8,6 +9,9 @@
         [3212, 31], // KABUPATEN INDRAMAYU - DKI Jakarta
         [31, 3374], // DKI Jakarta - KOTA SEMARANG
         [31, 3578], // DKI Jakarta - KOTA SURABAYA
+        [3273, 3671], // Kota Bandung - KOTA TANGERANG
+        [3207, 3374], // KABUPATEN CIAMIS - KOTA SEMARANG
+        [31, 5171], // DKI Jakarta - KOTA DENPASAR
     ];
 
 @endphp
@@ -17,8 +21,7 @@
         description='Kami memiliki beberapa rute travel unggulan yang mungkin anda suka.' />
 
     <div
-        class="grid grid-cols-1 min-[490px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-5 sm:gap-x-6 md:gap-x-7 lg:gap-x-8 gap-y-7 sm:gap-y-8 md:gap-y-9 lg:gap-y-10 text-left">
-        {{--  --}}
+        class="grid grid-cols-1 min-[490px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 sm:gap-x-6 md:gap-x-7 lg:gap-x-8 gap-y-7 sm:gap-y-8 md:gap-y-9 lg:gap-y-10 {{-- md:[&>div]:nth-[2]:hidden lg:[&>div]:nth-[4]:hidden xl:[&>div:nth-child(2)]:!block xl:[&>div:nth-child(4)]:!block --}}">
         @foreach ($travel as $item)
             @php
                 $origin = location($item[0]);

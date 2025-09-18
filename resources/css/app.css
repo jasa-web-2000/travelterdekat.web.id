@@ -63,6 +63,8 @@
         @apply text-text-title-black capitalize text-lg md:text-xl font-semibold;
     }
     button,
+    select,
+    input,
     a,
     label {
         @apply cursor-pointer;
