@@ -135,9 +135,26 @@ if (! function_exists('menu')) {
             [route('travel.archive'), "Travel"],
             [route('gallery'), "Galeri"],
             [route('contact'), "Kontak"],
-            [route('sitemap'), "Sitemap"],
+            [route('sitemap.index'), "Sitemap"],
         ];
 
         return (object) $data;
+    }
+}
+
+if (! function_exists('xml')) {
+    function xml($data)
+    {
+        $xml = new \SimpleXMLElement('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
+
+        foreach ($data as $url) {
+            $urlElement = $xml->addChild('url');
+            $urlElement->addChild('loc', $url);
+        }
+
+        $xmlString = $xml->asXML();
+
+        return response($xmlString, 200)
+            ->header('Content-Type', 'application/xml');
     }
 }

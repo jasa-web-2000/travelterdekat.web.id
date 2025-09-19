@@ -1,20 +1,15 @@
 <div class="max-w-[750px] mx-auto px-5 relative !z-10">
-    <form action="{{ route('travel.search.form') }}" method="POST" id="cari-rute"
-        class="scroll-mt-24 border-b-8 border-b-primary bg-background-primary rounded-lg shadow p-4 px-3 grid grid-cols-2 sm:grid-cols-1 gap-x-5 [&_label]:mt-4 [&_label]:mb-1 [&_label]:!line-clamp-1 [&_button]:w-full [&_button]:overflow-hidden [&_*]:!text-sm">
+    <form action="{{ route('travel.search.form') }}" target="_blank" method="POST" id="cari-rute"
+        class="scroll-mt-24 border-b-8 border-b-primary bg-background-primary rounded-lg shadow p-4 px-3 grid grid-cols-2 md:grid-cols-1 gap-x-5 [&_label]:mt-4 [&_label]:mb-1 [&_label]:!line-clamp-1 [&_button]:w-full [&_button]:overflow-hidden [&_*]:!text-sm [&_*]:md:!text-[15px] [&>div]:grid [&>div]:md:grid-cols-3 [&>div]:gap-x-5">
         @csrf
 
 
-        <div class="">
-            <x-travel.archive.select-location :data="province()" id="origin_province" label="Provinsi asal" />
+        @livewire('select-location', ['type' => 'origin'])
 
-        </div>
-
-        <div class="">
-
-        </div>
+        @livewire('select-location', ['type' => 'destination'])
 
 
-        <div class="col-span-full mt-4 text-right">
+        <div class="!col-span-full !block mt-4 text-right">
             <button class="btn-primary sm:!w-fit" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-5">

@@ -5,9 +5,12 @@ use App\Http\Controllers\LandingPage\ContactController;
 use App\Http\Controllers\LandingPage\ContactFormController;
 use App\Http\Controllers\LandingPage\GalleryController;
 use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\LandingPage\SearchFormController;
 use App\Http\Controllers\LandingPage\SingleTravelController;
-use App\Http\Controllers\SearchFormController;
-use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\Sitemap\ArchiveTravelSitemapController;
+use App\Http\Controllers\Sitemap\IndexSitemapController;
+use App\Http\Controllers\Sitemap\PageSitemapController;
+use App\Http\Controllers\Sitemap\SingleTravelSitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
@@ -17,7 +20,7 @@ Route::prefix('travel')->group(function () {
     Route::get('/', ArchiveTravelController::class)->name('travel.archive');
     Route::post('/', SearchFormController::class)->name('travel.search.form');
 
-    Route::prefix('/{originName}/{destinationName}/{originId}/{destinationId}')->group(function () {
+    Route::prefix('/dari-{originName}/ke-{destinationName}/{originId}/{destinationId}')->group(function () {
         Route::get('/', SingleTravelController::class)->name('travel.show');
         Route::get('/thumbnail.jpg', SingleTravelController::class)->name('travel.show.thumbnail');
     });
@@ -30,4 +33,7 @@ Route::prefix('/kontak')->group(function () {
     Route::post('/', ContactFormController::class)->name('contact.form');
 });
 
-Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
+Route::get('/sitemap.xml', IndexSitemapController::class)->name('sitemap.index');
+Route::get('/page-sitemap.xml', PageSitemapController::class)->name('sitemap.page');
+Route::get('/travel/sitemap.xml', ArchiveTravelSitemapController::class)->name('sitemap.archive');
+Route::get('/travel-{name}/{id}/sitemap.xml', SingleTravelSitemapController::class)->name('sitemap.single');

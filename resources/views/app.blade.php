@@ -32,6 +32,7 @@
     </style>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -94,7 +95,7 @@
     </main>
 
     @include('components.footer')
-
+    @livewireScripts
 </body>
 
 </html>

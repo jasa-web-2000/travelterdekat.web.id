@@ -14,8 +14,9 @@ class SelectLocation extends Component
      */
     public function __construct(
         public string $id,
+        public string $model,
         public string $label,
-        public Collection $data,
+        public ?Collection $data,
     ) {
         //
     }

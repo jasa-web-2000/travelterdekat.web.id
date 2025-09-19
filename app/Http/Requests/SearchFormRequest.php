@@ -22,7 +22,12 @@ class SearchFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "origin_province" => "string",
+            "origin_regency" => "nullable|string",
+            "origin_district" => "nullable|string",
+            "destination_province" => "string",
+            "destination_regency" => "nullable|string",
+            "destination_district" => "nullable|string",
         ];
     }
 }

@@ -97,7 +97,7 @@
 }
 
 @utility my-pseudo {
-    @apply disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus:outline-2 focus:outline-focus shrink-0 [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:border-background-primary focus-visible:ring-background-primary/50 focus-visible:ring-[3px] aria-invalid:ring-danger aria-invalid:border-danger border-[1.5px];
+    @apply disabled:pointer-events-none disabled:!cursor-not-allowed disabled:opacity-50 disabled:bg-background-secondary focus:outline-2 focus:outline-focus shrink-0 [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:border-background-primary focus-visible:ring-background-primary/50 focus-visible:ring-[3px] aria-invalid:ring-danger aria-invalid:border-danger border-[1.5px];
 }
 
 @utility my-container {

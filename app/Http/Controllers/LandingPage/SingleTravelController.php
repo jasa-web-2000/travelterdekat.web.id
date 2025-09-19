@@ -18,7 +18,7 @@ class SingleTravelController extends Controller
             abort(404);
         }
 
-        $travel = "Travel $origin->name $destination->name";
+        $travel = "Travel " . Str::title($origin->name) . " " . Str::title($destination->name);
 
         if (request()->routeIs('travel.show.thumbnail')) {
             $thumbnail = new ThumbnailController;
