@@ -214,6 +214,10 @@ if (! function_exists('xml')) {
         foreach ($data as $url) {
             $urlElement = $xml->addChild('url');
             $urlElement->addChild('loc', $url);
+
+            $urlElement->addChild('lastmod', now()->toAtomString());
+            $urlElement->addChild('changefreq', 'daily');
+            $urlElement->addChild('priority', '0.9');
         }
 
         $xmlString = $xml->asXML();
