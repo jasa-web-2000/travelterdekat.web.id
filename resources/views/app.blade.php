@@ -81,6 +81,63 @@
     <meta name="twitter:image:height" content="{{ $resultThumbnail->height }}">
     <meta name="twitter:image:alt" content="{{ $resultThumbnail->alt }}">
 
+    @if (request()->routeIs('travel.show') && $productSchema)
+        @php
+            $product = collect([
+                '@context' => 'https://schema.org/',
+                '@type' => 'Product',
+                'name' => $page,
+                'description' => $description,
+                'image' => $resultThumbnail->url,
+                'brand' => collect([
+                    '@type' => 'Brand',
+                    'name' => web()->title,
+                ]),
+                'offers' => collect([
+                    '@type' => 'AggregateOffer',
+                    'offerCount' => $productSchema['offers']['offerCount'],
+                    'lowPrice' => $productSchema['offers']['lowPrice'],
+                    'highPrice' => $productSchema['offers']['highPrice'],
+                    'priceCurrency' => 'IDR',
+                ]),
+                'review' => [
+                    '@type' => 'Review',
+                    'positiveNotes' => [
+                        '@type' => 'ItemList',
+                        'itemListElement' => [
+                            [
+                                '@type' => 'ListItem',
+                                'position' => 1,
+                                'name' => $productSchema['reviewBody'],
+                            ],
+                        ],
+                    ],
+                    'reviewBody' => $productSchema['reviewBody'],
+                    'reviewRating' => [
+                        '@type' => 'Rating',
+                        'ratingValue' => $productSchema['rating']['ratingValue'],
+                        'bestRating' => 5,
+                    ],
+                    'author' => [
+                        '@type' => 'Person',
+                        'name' => developer()->name,
+                    ],
+                ],
+                'aggregateRating' => [
+                    '@type' => 'AggregateRating',
+                    'ratingValue' => $productSchema['rating']['ratingValue'],
+                    'reviewCount' => $productSchema['offers']['offerCount'],
+                    'bestRating' => 5,
+                ],
+            ]);
+        @endphp
+        <script type="application/ld+json">
+
+        {!! json_encode($product, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+
+    </script>
+    @endif
+
 
 
 </head>
@@ -96,6 +153,19 @@
 
     @include('components.footer')
     @livewireScripts
+
+    {{-- <script>
+        const headings = document.querySelectorAll(':is(h2,h3)');
+
+        console.log(headings)
+
+        let heading = ''
+        headings.forEach(element => {
+            heading += element.tagName.toLowerCase() + ' ' + element.textContent + '<br>'
+        });
+
+        document.body.innerHTML = heading
+    </script> --}}
 </body>
 
 </html>

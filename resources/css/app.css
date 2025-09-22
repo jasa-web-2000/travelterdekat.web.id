@@ -94,6 +94,48 @@
     main a {
         @apply underline text-link;
     }
+
+    article {
+        & p {
+            @apply mb-4 text-justify;
+        }
+        & :is(h2, h3) {
+            @apply mb-5 pl-2.5 relative;
+
+            &:before,
+            &:after {
+                @apply absolute left-0 content-[''] border h-2/3 top-1/2 -translate-y-1/2 border-primary;
+            }
+        }
+
+        & h3 {
+            @apply !pl-5;
+
+            &:after {
+                @apply left-2.5;
+            }
+        }
+
+        & ol {
+            @apply list-decimal ml-8 mb-5;
+        }
+
+        & table {
+            @apply w-full border-collapse border border-gray-400 bg-background-primary text-sm;
+
+            & thead {
+                @apply bg-background-secondary/30;
+
+                & th {
+                    @apply border border-gray-300 p-4 text-left font-semibold text-text-title-black;
+                }
+            }
+
+            & tbody td {
+                @apply border border-gray-300 p-4;
+            }
+        }
+    }
 }
 
 @utility my-pseudo {

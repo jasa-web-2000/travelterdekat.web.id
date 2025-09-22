@@ -17,9 +17,73 @@ if (! function_exists('mail')) {
 if (! function_exists('phoneNumber')) {
     function phoneNumber(?string $phoneNumber = null, bool $link = false)
     {
-        $resultPhoneNumber = $phoneNumber ?? '+62 882-8931-7870';
+        $resultPhoneNumber = $phoneNumber ?? validationPhoneNumber();
 
         return $link ? str_replace(['-', '+', ' '], '', $resultPhoneNumber) : $resultPhoneNumber;
+    }
+}
+
+if (! function_exists('validationPhoneNumber')) {
+    function validationPhoneNumber()
+    {
+        $originId = request()->route('originId');
+        $destinationId = request()->route('destinationId');
+
+        // Fungsi bantu untuk cek apakah ID termasuk dalam rentang wilayah tertentu
+        $inRange = function ($id, $ranges) {
+            foreach ($ranges as [$min, $max]) {
+                if ($id >= $min && $id <= $max) {
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        // Rentang ID untuk Sumatra
+        $sumatraRanges = [
+            [11, 21],           // Provinsi
+            [1101, 2172],       // Kota
+            [110101, 217204],   // Kecamatan
+        ];
+
+        // Rentang ID untuk Jawa
+        $jawaRanges = [
+            [31, 51],           // Provinsi
+            [3101, 5171],       // Kota
+            [310101, 517104],   // Kecamatan
+        ];
+
+        $kalimantanRanges = [
+            [61, 65],           // Provinsi
+            [6101, 6571],       // Kota
+            [610101, 657104],   // Kecamatan
+        ];
+
+        $sulawesiRanges = [
+            [71, 76],           // Provinsi
+            [7101, 7606],       // Kota
+            [710105, 760605],   // Kecamatan
+        ];
+
+        $jawa = $inRange($originId, $jawaRanges) || $inRange($destinationId, $jawaRanges);
+
+        $sumatra = $inRange($originId, $sumatraRanges) || $inRange($destinationId, $sumatraRanges);
+
+        $kalimantan = $inRange($originId, $kalimantanRanges) && $inRange($destinationId, $kalimantanRanges);
+
+        $sulawesi = $inRange($originId, $sulawesiRanges) && $inRange($destinationId, $sulawesiRanges);
+
+        if ($jawa) {
+            return '+62 899-0704-308';
+        } elseif ($sumatra) {
+            return '+62 812-1156-3500';
+        } elseif ($kalimantan) {
+            return '+62 857-9190-4615';
+        } elseif ($sulawesi) {
+            return '+62 857-0518-0556';
+        } else {
+            return '+62 821-3087-7954';
+        }
     }
 }
 
@@ -41,7 +105,7 @@ if (! function_exists('web')) {
     {
         $data = [
             "title" => env('APP_NAME'),
-            "tagline" => "Jasa Travel Terdekat Rute Jawa Bali",
+            "tagline" => "Jasa Travel Terdekat Rute se-Indonesia",
             "transparentLogo" => asset('images/general/TRAVEL-TERDEKAT.gif'),
             "defaultLogo" => asset('images/general/TRAVEL-TERDEKAT.jpg'),
         ];
@@ -111,9 +175,9 @@ if (! function_exists('location')) {
     function location($id, $name = null)
     {
         $data = null;
-        if ($id <= 51) {
+        if ($id <= 94) {
             $data = province()->where('id', $id)->first();
-        } elseif ($id <= 5171) {
+        } elseif ($id <= 9471) {
             $data = regency()->where('id', $id)->first();
         } else {
             $data = district()->where('id', $id)->first();
@@ -156,5 +220,14 @@ if (! function_exists('xml')) {
 
         return response($xmlString, 200)
             ->header('Content-Type', 'application/xml');
+    }
+}
+
+if (!function_exists('rupiah')) {
+    function rupiah($angka)
+    {
+        // $formatter = new \NumberFormatter('id_ID', \NumberFormatter::CURRENCY);
+        // return $formatter->formatCurrency($angka, 'IDR');
+        return 'Rp ' . number_format($angka, 0, ',', '.');
     }
 }
