@@ -19,7 +19,7 @@
             $originName .
             ' ke ' .
             $destinationName .
-            '. Sangat rekomendasi, walaupun mendadadak tetap dilayani dengan sat set sat set.',
+            '. Sangat rekomendasi, walaupun mendadak tetap dilayani dengan sat set sat set.',
         ],
         [
             'Sinta Rona',
@@ -169,7 +169,7 @@
             </ol>
 
             <p>
-                Jadwal tersebut suatu waktu dapat berubah menyesuaikan sitausi dan kondisi driver. Untuk lebih lanjut
+                Jadwal tersebut suatu waktu dapat berubah menyesuaikan situasi dan kondisi driver. Untuk lebih lanjut
                 bisa hubungi admin dan tanyakan terkait jadwal keberangkatan.
             </p>
 
@@ -251,7 +251,7 @@
 
             {{-- Halte --}}
             @if ($origin->id == 1 || $destination->id == 1)
-                <h3>Daftar Halteyang Dilayani</h3>
+                <h3>Daftar Halte yang Dilayani</h3>
                 <ol>
                     <!-- Jakarta -->
                     <li>Halte Bundaran HI (Jakarta Pusat, DKI Jakarta)</li>
@@ -491,10 +491,11 @@
             <h2>8 Penyedia {{ $page }} Terbaik</h2>
 
             <p>Apakah anda sudah menemukan jasa travel ke {{ $destinationName }}? Harap berhati-hati jangan sampai anda
-                salah memilihi travel. Pastikan anda cek profil sosmed, getcontact, hingga google mapnya. Jika perlu
+                salah memilih travel. Pastikan anda cek profil sosmed, Aplikasi Get Contact, hingga google mapnya. Jika
+                perlu
                 datang langsung ke garasi untuk meyakinkan diri anda.</p>
 
-            <p>Jika anda tidak mau menggunakan jasa dari kami, maka kami akan menyarakan perusahaan travel lain yang
+            <p>Jika anda tidak mau menggunakan jasa dari kami, maka kami akan menyarankan perusahaan travel lain yang
                 akan membantu perjalanan anda dari {{ $originName }} ke {{ $destinationName }}. Mereka ini adalah
                 partner kami dalam bidang transportasi. Siap membantu dengan pelayanan terbaik.</p>
 
@@ -513,7 +514,8 @@
 
             <p>Travel {{ $originName }} atau Travel {{ $destinationName }} yang ditawarkan sangat cocok untuk anda
                 jika perli jalan-jalan sendiri.
-                Driver akan memberikan arahan untuk hal yang harus anda lakukan setelah sampai dititik lokasi. Jika anda
+                Driver akan memberikan arahan untuk hal yang harus anda lakukan setelah sampai di titik lokasi. Jika
+                anda
                 baru pertama kali ke daerah itu, driver kami akan memberikan rekomendasi tempat wisata terbaik. Bahkan
                 anda bisa memesan carter pp (pulang pergi) sekalian.</p>
 
@@ -534,11 +536,11 @@
 
             <h3>Travel Sumatra</h3>
 
-            <p>Yang kedua adalah <i>Travel Sumatra</i>, menjadi penyedia travel terbaik namun berfokus pada daearah
+            <p>Yang kedua adalah <i>Travel Sumatra</i>, menjadi penyedia travel terbaik namun berfokus pada daerah
                 Sumatra saja. Tapi tidak
                 terbatas disitu jika anda memesan carter. Dengan menggunakan carter anda bisa diantar kemana saja selagi
                 budget cocok. <a href="https://travelsumatra.web.id" target="_blank" title="Travel Sumatra"
-                    rel="nofollow noindex">Travel Sumatra</a> telah berpenglamanan bertahun tahun untuk rute ini. Anda
+                    rel="nofollow noindex">Travel Sumatra</a> telah berpengalaman bertahun tahun untuk rute ini. Anda
                 akan mendapatkan pelayanan luar biasa dari mereka. Pesan travel carter
                 {{ $destinationName }} {{ $originName }} bersama mereka, anda akan mendapatkan bonsu makan selama
                 perjalanan.</p>
@@ -566,14 +568,14 @@
             <h3>Travel Jawa</h3>
 
             <p>Yang ketiga adalah <i>Travel Jawa</i>. <a href="https://traveljawa.web.id" target="_blank"
-                    title="Travel Jawa" rel="nofollow noindex">Travel Jawa</a> bisa di andlakan untuk rute
+                    title="Travel Jawa" rel="nofollow noindex">Travel Jawa</a> bisa diandlakan untuk rute
                 {{ $page }} hari ini. Anda bisa melakukan pemesanan tiket travel dengan mudah langsung via
                 whatsapp. Perjalanan cepat dan via tol penuh. Untuk harga travel sudah include biaya tol dan bbm. Dan
                 pembayaran tiket travel dilakukan ketika anda sudah tiba di lokasi tujuan.</p>
 
             <p>Akan lebih disarankan jika memesan travel 1 hari sebelum keberangkatan. Agar pihak driver dapat
-                mempersiapkan kebutuhan dengan maksimal, anda juga bisa lebih santay dan tidak terburu-buru selama
-                perjalanan travel. Tapi jika mendadadak maka sangan disarankan memesan travel carter
+                mempersiapkan kebutuhan dengan maksimal, anda juga bisa lebih santai dan tidak terburu-buru selama
+                perjalanan travel. Tapi jika mendadak maka sangat disarankan memesan travel carter
                 {{ $originName }}.</p>
 
             <p>Untuk lebih lanjut, hubungi mereka pada kontak dibawah ini:</p>
@@ -586,7 +588,7 @@
                 <li><strong>Website: </strong>https://traveljawa.web.id</li>
                 <li><strong>Fasilitas: </strong>Free bagasi, bonus makan, mobil ber-ac dan dapat merchandise untuk
                     carter</li>
-                <li><strong>Unit: </strong>Unit lengkap, mulai dari hiace, elf long, mini bus, avanza, innova dan
+                <li><strong>Unit: </strong>Unit lengkap, mulai dari hiace, elf long, minibus, avanza, innova dan
                     lain-lain</li>
                 <li><strong>Jadwal: </strong>Setiap 2 jam di mulai dari jam 04.00 WIB hingga jam 20.00 WIB</li>
                 <li><strong>Layanan: </strong>Kirim paket kilat, Travel reguler, Carter pp dan drop, wisata religi,
@@ -613,7 +615,7 @@
             <p>Perhatikan profil dari agen travel ini:</p>
 
             <ol>
-                <li><strong>Nama: </strong>Travel Kalimatan</li>
+                <li><strong>Nama: </strong>Travel Kalimantan</li>
                 <li><strong>Nomor Whatsapp: </strong>{{ phoneNumber() }}</li>
                 <li><strong>Nomor Telepon: </strong>{{ phoneNumber() }}</li>
                 <li><strong>Alamat Garasi: </strong>Kota Samarinda, Provinsi Kalimantan Timur</li>
@@ -656,9 +658,9 @@
                 pergi. <a href="https://mumpunitransjava.com/" target="_blank" title="Mumpuni Trans Java"
                     rel="nofollow noindex">Mumpuni Trans Java</a> ini travel profesional dan terpercaya. Telah
                 berpengalaman lebih dari {{ date('y') - 21 }} tahun dalam jasa travel untuk rute seluruh Indonesia.
-                Akan tetap anda harus berhati-hati karena banyak oknum yang mengatas namakan Mumpuni Trans Java.</p>
+                Akan tetap anda harus berhati-hati karena banyak oknum yang mengatasnamakan Mumpuni Trans Java.</p>
 
-            <p>Mumpuni Trans Java atau biasa disingkat MTJ ini menawarikan travel yang nyaman, cepat, dan tentunya
+            <p>Mumpuni Trans Java atau biasa disingkat MTJ ini menawarkan travel yang nyaman, cepat, dan tentunya
                 murah. Untuk pemesanan jangan sampai salah, hubungi nomor whatsapp {{ phoneNumber() }}. Bisa disarankan
                 jika datang ke garasi mereka.</p>
 
@@ -714,9 +716,9 @@
 
             <h3>Arman Trans</h3>
 
-            <p>Yang terkahir adalah <i>Arman Trans</i>. Ini adalah travel pribadi yang kami rekomendasikan. Lantas owner
+            <p>Yang terakhir adalah <i>Arman Trans</i>. Ini adalah travel pribadi yang kami rekomendasikan. Lantas owner
                 <a href="https://armantrans.com/" target="_blank" title="Arman Trans" rel="nofollow noindex">Arman
-                    Trans</a> yang menjadi driver langsung. Siap mengantarkan anda kemanapun, terutama di daearah
+                    Trans</a> yang menjadi driver langsung. Siap mengantarkan anda kemanapun, terutama di daerah
                 {{ $originName }} dan {{ $destinationName }}. Jadi jangan khawatir, pasti sampai tujuan dengan
                 selamat dan cepat.
             </p>
@@ -777,12 +779,12 @@
 
             <p>Dari {{ $originName }} ke {{ $destinationName }} memiliki jarak yang lumayan jauh. Berkilo-kilo
                 meter
-                jarak yang harus ditempuh, dan ber-jam-jam durasi yang akan dilalui. Maka dari itu anda harus tetap fit
+                jarak yang harus ditempuh, dan berjam-jam durasi yang akan dilalui. Maka dari itu anda harus tetap fit
                 selama perjalanan.</p>
 
             <p>Anda ingin melakukan perjalanan {{ $page }} sendirian? Anda harus selalu hati-hati dalam setiap
                 perjalanan.
-                Dan tetep dokumentasikan setiap perjalanan agar anda punya kenang-kenangan. Namun sebelum melakukan
+                Dan tetap dokumentasikan setiap perjalanan agar anda punya kenang-kenangan. Namun sebelum melakukan
                 perjalanan anda harus mengingat tips dari kami.</p>
 
             <p>Berikut tipsnya:</p>
@@ -806,11 +808,11 @@
                 <li>Pertama konsultasikan harga dan titik antar jemput</li>
                 <li>Isi formulir via whatsapp (jika online), jika offline isi formulir berupa kertas. Formulir berisi
                     data penumpang detail detail tiket.</li>
-                <li>Tinggal tunggu jadwal keberangkatan maka admin akan mejemput anda</li>
+                <li>Tinggal tunggu jadwal keberangkatan maka admin akan menjemput anda</li>
             </ol>
 
             <p>
-                Sangat mudah bukan? Jadi tunggu apa lagi, ayo pesan <strong>{{ $page }}</strong> sekarang juga
+                Sangat mudah bukan? Jadi tunggu apalagi, ayo pesan <strong>{{ $page }}</strong> sekarang juga
                 pada nomor
                 {{ phoneNumber() }}.
             </p>
