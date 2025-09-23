@@ -17,17 +17,29 @@
     <!-- Styles / Scripts -->
     <link rel="preload" fetchpriority="high" as="image" href="{{ asset('images/general/background-hero.webp') }}"
         type="image/webp">
-    <link rel="preload" fetchpriority="high" href="{{ asset('fonts/Roboto-Regular.ttf') }}" as="font" type="font/ttf"
+    <link rel="preload" href="{{ asset('/fonts/Inter-Regular.ttf') }}" as="font" type="font/ttf"
         crossorigin="anonymous">
 
 
+    {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet"> --}}
+
     <style>
         @font-face {
-            font-family: 'Poppins';
-            src: url('{{ asset('fonts/Roboto-Regular.ttf') }}') format('truetype');
+            font-family: 'Inter';
+            src: url('{{ asset('/fonts/Inter-Regular.ttf') }}') format('truetype');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
+        }
+
+
+
+        body {
+            font-family: "Inter", sans-serif;
         }
     </style>
 
@@ -143,7 +155,7 @@
 </head>
 
 <body
-    class="!font-inter bg-background-secondary text-text-description-black tracking-[0.015em] antialiased w-full h-dvh !overflow-visible">
+    class="bg-background-secondary text-text-description-black tracking-[0.015em] antialiased w-full h-dvh !overflow-visible">
 
     @include('components.header')
 
@@ -153,6 +165,7 @@
 
     @include('components.footer')
     @livewireScripts
+
 
     {{-- <script>
         const headings = document.querySelectorAll(':is(h2,h3)');

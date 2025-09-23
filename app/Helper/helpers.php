@@ -215,9 +215,9 @@ if (! function_exists('xml')) {
             $urlElement = $xml->addChild('url');
             $urlElement->addChild('loc', $url);
 
-            $urlElement->addChild('lastmod', now()->toAtomString());
-            $urlElement->addChild('changefreq', 'daily');
-            $urlElement->addChild('priority', '0.9');
+            // $urlElement->addChild('lastmod', now()->toAtomString());
+            // $urlElement->addChild('changefreq', 'daily');
+            // $urlElement->addChild('priority', '0.9');
         }
 
         $xmlString = $xml->asXML();

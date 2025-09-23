@@ -25,9 +25,9 @@ class ThumbnailController extends Controller
                     'color' => '#2e2d2d'
                 ],
                 'color' => 'white',
-                'size' => 100,
+                'size' => 90,
                 'yOffset' =>  -200 + ($key * 130),
-                'fontFile' => public_path('fonts/Roboto-Regular.ttf'),
+                'fontFile' => public_path('fonts/Inter-Regular.ttf'),
             ]);
         }
 
@@ -41,7 +41,7 @@ class ThumbnailController extends Controller
             'color' => 'black',
             'size' => 57,
             'yOffset' => 218,
-            'fontFile' => public_path('fonts/Roboto-Regular.ttf'),
+            'fontFile' => public_path('fonts/Inter-Regular.ttf'),
         ]);
 
         $imageData = $image->toDataUri(null, 15);

@@ -46,6 +46,7 @@
         ]);
     }
 @endphp
+
 <div class="my-container">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-x-10 lg:gap-x-20">
         <div class="md:col-span-8 ">
@@ -430,8 +431,10 @@
 
             <p>
                 Travel ini telah dibeli oleh para penumpang kami sebanyak
-                <strong>{{ $productSchema['rating']['reviewCount'] }} kali </strong> dengan review positif dan
-                memuaskan dan rating rata-rata sebesar <strong>{{ $ratingValue }} dari
+                <strong>{{ $productSchema['offers']['offerCount'] + 20 }} kali </strong> dengan review positif dan
+                memuaskan sebanyak <strong>{{ $productSchema['rating']['reviewCount'] }} kali</strong>. Dan mendapatkan
+                rating rata-rata sebesar
+                <strong>{{ $ratingValue }} dari
                     5</strong>
                 <span title="rating {{ $ratingValue }} / 5" class="rating text-xl"
                     style="  background: linear-gradient(to right, var(--primary) 0%, var(--primary) {{ $ratingValue * 20 }}%, rgba(163,163,163.10) {{ $ratingValue * 20 }}%, rgba(163,163,163.10) 100%);
