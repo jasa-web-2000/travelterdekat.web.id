@@ -69,9 +69,9 @@ if (! function_exists('validationPhoneNumber')) {
 
         $sumatra = $inRange($originId, $sumatraRanges) || $inRange($destinationId, $sumatraRanges);
 
-        $kalimantan = $inRange($originId, $kalimantanRanges) && $inRange($destinationId, $kalimantanRanges);
+        $kalimantan = $inRange($originId, $kalimantanRanges) || $inRange($destinationId, $kalimantanRanges);
 
-        $sulawesi = $inRange($originId, $sulawesiRanges) && $inRange($destinationId, $sulawesiRanges);
+        $sulawesi = $inRange($originId, $sulawesiRanges) || $inRange($destinationId, $sulawesiRanges);
 
         if ($jawa) {
             return '+62 899-0704-308';
