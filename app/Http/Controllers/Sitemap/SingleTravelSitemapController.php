@@ -30,21 +30,6 @@ class SingleTravelSitemapController extends Controller
                 ]);
             });
 
-        $resultReverse = $allData
-            ->filter(function ($item) use ($name, $id) {
-                return $id != $item->id;
-            })
-            ->map(function ($item) use ($name, $id) {
-                return route('travel.show', [
-                    'originName' => Str::slug($item->name),
-                    'destinationName' => $name,
-                    'originId' => $item->id,
-                    'destinationId' => $id,
-                ]);
-            });
-
-        $collection = collect([$result, $resultReverse]);
-
-        return xml($collection->flatten()->all());
+        return xml($result);
     }
 }
