@@ -64,13 +64,13 @@ class SingleTravelController extends Controller
     {
         return [
             'offers' => [
-                'offerCount' => $origin->id + 6,
-                'lowPrice' => 99000,
-                'highPrice' => 1999000,
+                'offerCount' => 4,
+                'lowPrice' => 100000,
+                'highPrice' => 250000,
             ],
             'rating' => [
                 'ratingValue' => date('Y') % 2 == 0 ? 4.6 : 4.7,
-                'reviewCount' => $origin->id + 3,
+                'reviewCount' => 4,
             ],
             'reviewBody' => 'Pelayanan ' . $title . ' sangat rekomendasi. Admin menerima pesanan pada tengah malam dan driver sangat ramah. Perjalanan travel sangat nyaman, ber-ac, dan cepat via tol penuh.',
         ];

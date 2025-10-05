@@ -431,7 +431,7 @@
 
             <p>
                 Travel ini telah dibeli oleh para penumpang kami sebanyak
-                <strong>{{ $productSchema['offers']['offerCount'] + 20 }} kali </strong> dengan review positif dan
+                <strong>{{ $productSchema['rating']['reviewCount'] }} kali </strong> dengan review positif dan
                 memuaskan sebanyak <strong>{{ $productSchema['rating']['reviewCount'] }} kali</strong>. Dan mendapatkan
                 rating rata-rata sebesar
                 <strong>{{ $ratingValue }} dari
