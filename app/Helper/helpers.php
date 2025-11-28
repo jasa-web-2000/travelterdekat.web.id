@@ -80,6 +80,7 @@ if (! function_exists('validationPhoneNumber')) {
         } elseif ($kalimantan) {
             return '+62 857-9190-4615';
         } elseif ($sulawesi) {
+            return '+62 858-2132-4592';
             return '+62 897-0557-837';
             return '+62 821-3087-7954';
             return '+62 812-4440-8470';
