@@ -219,7 +219,8 @@
 
             <h3>Pilihan Mobil/Armada/Unit yang Tersedia </h3>
 
-            <p>Terdapat banyak pilihan mobil/armada/unit yang tersedia. Semua mobil dijamin bersih dan nyaman serta
+            <p>Terdapat banyak pilihan mobil/armada/unit yang tersedia untuk rute {{ $page }}. Semua mobil
+                dijamin bersih dan nyaman serta
                 dilengkapi fasilitas ac. Berikut daftar mobil yang kami pakai untuk travel, carter, maupun ziarah:</p>
 
             <ol>
@@ -430,7 +431,7 @@
             <h3>Testimoni/Ulasan/Review dari Penumpang</h3>
 
             <p>
-                Travel ini telah dibeli oleh para penumpang kami sebanyak
+                {{ $page }} telah dibeli oleh para penumpang kami sebanyak
                 <strong>{{ $productSchema['rating']['reviewCount'] }} kali </strong> dengan review positif dan
                 memuaskan sebanyak <strong>{{ $productSchema['rating']['reviewCount'] }} kali</strong>. Dan mendapatkan
                 rating rata-rata sebesar
@@ -536,7 +537,8 @@
 
             <h3>Travel Sumatra</h3>
 
-            <p>Yang kedua adalah <i>Travel Sumatra</i>, menjadi penyedia travel terbaik namun berfokus pada daerah
+            <p>Yang kedua adalah <i>Travel Sumatra</i>, menjadi penyedia {{ $page }} terbaik namun berfokus
+                pada daerah
                 Sumatra saja. Tapi tidak
                 terbatas disitu jika anda memesan carter. Dengan menggunakan carter anda bisa diantar kemana saja selagi
                 budget cocok. <a href="https://travelsumatra.web.id" target="_blank" title="Travel Sumatra"
@@ -688,7 +690,8 @@
             <p>Selanjutnya ada travel bernama <i>Panda 88 Trans</i> dari Magelang Jawa Tengah. Agen travel <a
                     href="https://panda88trans.web.id/" target="_blank" title="Panda 88 Trans"
                     rel="nofollow noindex">Panda 88 Trans</a> siap antar jemput 24 jam daerah Jawa, Bali, hingga
-                Sumatra. Bisa pesan travel ataupun carter. Namun untuk jarak jauh sangat direkomendasikan memesan carter
+                Sumatra. Bisa pesan {{ $page }} hari ini. Namun untuk jarak jauh sangat direkomendasikan
+                memesan carter
                 drop atau carter pp.</p>
 
             <p>
@@ -801,7 +804,7 @@
 
 
 
-            <h2>Cara Pesan Travel</h2>
+            <h2>Cara Pesan {{ $page }}</h2>
 
             <p>Berikut cara pesan travel secara online maupun offline:</p>
 
