@@ -20,6 +20,36 @@ class SingleTravelController extends Controller
             abort(404);
         }
 
+        $dupliacateOrigin = district()
+            ->filter(function ($district) use ($originName) {
+                return Str::slug($district->name) === $originName;
+            })->first();
+        $origin = $dupliacateOrigin ?? $origin;
+
+        $dupliacateDestination = district()
+            ->filter(function ($district) use ($destinationName) {
+                return Str::slug($district->name) === $destinationName;
+            })->first();
+        $destination = $dupliacateDestination ?? $destination;
+
+        if ($origin->id == $destination->id) {
+            abort(404);
+        }
+
+        if (request()->routeIs('travel.show.thumbnail')) {
+            $thumbnail = new ThumbnailController;
+            return $thumbnail(['Travel', Str::title($origin->name), Str::title($destination->name)]);
+        }
+
+        if ($origin->id != $originId || $destinationId != $destination->id) {
+            return redirect()->route('travel.show', [
+                'originName' => Str::slug($origin->name),
+                'destinationName' => Str::slug($destination->name),
+                'originId' => $origin->id,
+                'destinationId' => $destination->id,
+            ]);
+        }
+
         $recomendation = collect([
             ...province()->random(2),
             ...regency()->random(5),

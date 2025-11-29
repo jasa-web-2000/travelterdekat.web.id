@@ -607,7 +607,8 @@
 
             <p>
                 Travel reguler tidak hanya populer di Pulau Jawa dan Sumatra saja! Kini beberapa daerah di Kalimantan
-                mulai terdapat layanan transportasi travel reguler dan carter.Salah satunya adalah mereka, Travel
+                mulai terdapat layanan transportasi travel reguler dan carter. Salah satunya adalah rute
+                {{ $page }}, Travel
                 Kalimantan. Travel ini bisa dibilang masih awal-awal, mulai dibangun sejak Januari 2025. Namun kini
                 telah beroperasi di seluruh daerah di Kalimantan.
             </p>
